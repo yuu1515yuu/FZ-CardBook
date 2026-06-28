@@ -1,21 +1,41 @@
-/* ======================================================
-   cards.js
-====================================================== */
+/* ==========================================
+   カード一覧表示
+========================================== */
 
-const cards = [
-    {
-        id: "KAR-P-001",
+function renderCards(cards){
 
-        member: "karen",
+    const container = document.getElementById("card-list");
 
-        type: "paper",
+    container.innerHTML = "";
 
-        title: "サンプルカード",
+    cards.forEach(card=>{
 
-        series: "Coming Soon",
+        const div = document.createElement("div");
 
-        owned: false,
+        div.className = "card";
 
-        image: "images/placeholder/no-image.png"
-    }
-];
+        div.innerHTML = `
+
+            <div class="card-image">
+
+                <img src="images/placeholder/no-image.png">
+
+            </div>
+
+            <div class="card-body">
+
+                <h3>${card.Name}</h3>
+
+                <p>${card.Series}</p>
+
+                <small>${card.CardNo}</small>
+
+            </div>
+
+        `;
+
+        container.appendChild(div);
+
+    });
+
+}
