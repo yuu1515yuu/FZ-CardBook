@@ -4,11 +4,20 @@
 
 function renderCards(cards){
 
-    const container = document.getElementById("card-list");
+    const container = document.getElementById("cardGrid");
 
     container.innerHTML = "";
 
     cards.forEach(card=>{
+
+        const image =
+            card["表画像"] ||
+            "images/placeholder/no-image.png";
+
+        const owned =
+            card["所持"] === "TRUE"
+                ? "🩷 所持"
+                : "🤍 未所持";
 
         const div = document.createElement("div");
 
@@ -16,19 +25,25 @@ function renderCards(cards){
 
         div.innerHTML = `
 
-            <div class="card-image">
-
-                <img src="images/placeholder/no-image.png">
-
-            </div>
+            <img src="${image}">
 
             <div class="card-body">
 
-                <h3>${card.Name}</h3>
+                <div class="card-number">
+                    ${card["カード番号"] || ""}
+                </div>
 
-                <p>${card.Series}</p>
+                <div class="card-title">
+                    ${card["カード名"] || ""}
+                </div>
 
-                <small>${card.CardNo}</small>
+                <div class="card-series">
+                    ${card["シリーズ"] || ""}
+                </div>
+
+                <div class="card-status">
+                    ${owned}
+                </div>
 
             </div>
 
