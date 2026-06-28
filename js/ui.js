@@ -13,9 +13,13 @@ function renderCards() {
         grid.innerHTML += `
             <div class="card">
 
-                <div class="card-image">
-                    🖼️
-                </div>
+               <div class="card-image">
+               
+                   <img
+                       src="${card.image ?? 'images/placeholder/no-image.png'}"
+                       alt="${card.title}">
+               
+               </div>
 
                 <div class="card-body">
 
