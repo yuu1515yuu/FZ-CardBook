@@ -4,11 +4,18 @@
 
 const cards = [
     {
-        id: 1,
+        id: "KAR-P-001",
+
         member: "karen",
+
         type: "paper",
+
         title: "サンプルカード",
+
         series: "Coming Soon",
-        owned: false
+
+        owned: false,
+
+        image: "images/placeholder/no-image.png"
     }
 ];
