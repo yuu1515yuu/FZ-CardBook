@@ -1,1 +1,115 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>FZ CardBook</title>
+
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+
+<div id="app">
+
+    <!-- Header -->
+    <header class="header">
+
+        <div class="logo">
+
+            <h1>🍓 FZ CardBook</h1>
+
+            <p>FRUITS ZIPPER Trading Card Collection</p>
+
+        </div>
+
+    </header>
+
+    <!-- Dashboard -->
+
+    <section class="dashboard">
+
+        <div class="stat-card">
+
+            <h2>所持率</h2>
+
+            <p id="ownedRate">0%</p>
+
+        </div>
+
+        <div class="stat-card">
+
+            <h2>所持枚数</h2>
+
+            <p id="ownedCount">0</p>
+
+        </div>
+
+        <div class="stat-card">
+
+            <h2>未所持</h2>
+
+            <p id="missingCount">0</p>
+
+        </div>
+
+    </section>
+
+    <!-- Filter -->
+
+    <section class="filters">
+
+        <select id="memberSelect">
+
+            <option value="all">全メンバー</option>
+
+            <option value="karen">松本かれん</option>
+
+            <option value="yui">櫻井優衣</option>
+
+        </select>
+
+        <select id="typeSelect">
+
+            <option value="all">全種類</option>
+
+            <option value="paper">紙トレカ</option>
+
+            <option value="clear">クリアトレカ</option>
+
+        </select>
+
+        <input
+            id="searchInput"
+            type="search"
+            placeholder="シリーズ・カード名で検索">
+
+    </section>
+
+    <!-- Card List -->
+
+    <main>
+
+        <section
+            id="cardGrid"
+            class="card-grid">
+
+        </section>
+
+    </main>
+
+</div>
+
+<script src="js/config.js"></script>
+<script src="js/storage.js"></script>
+<script src="js/cards.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/app.js"></script>
+
+</body>
+</html>
