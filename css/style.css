@@ -1,1 +1,338 @@
+/* ======================================================
+   FZ CardBook
+   style.css
+====================================================== */
 
+/* ---------- Reset ---------- */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:var(--font-main);
+
+    background:linear-gradient(
+        180deg,
+        #ffffff 0%,
+        #fff8fb 100%
+    );
+
+    color:var(--color-text);
+
+    min-height:100vh;
+
+    transition:background .4s ease;
+
+}
+
+/* ---------- App ---------- */
+
+#app{
+
+    max-width:1400px;
+
+    margin:auto;
+
+    padding:20px;
+
+}
+
+/* ---------- Header ---------- */
+
+.header{
+
+    position:sticky;
+
+    top:0;
+
+    z-index:100;
+
+    background:rgba(255,255,255,.75);
+
+    backdrop-filter:blur(15px);
+
+    border-radius:24px;
+
+    padding:24px;
+
+    box-shadow:var(--shadow-small);
+
+    margin-bottom:24px;
+
+}
+
+.logo{
+
+    text-align:center;
+
+}
+
+.logo h1{
+
+    font-size:2rem;
+
+    color:var(--color-primary);
+
+    margin-bottom:8px;
+
+}
+
+.logo p{
+
+    color:var(--color-subtext);
+
+    font-size:.95rem;
+
+}
+
+/* ---------- Dashboard ---------- */
+
+.dashboard{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:18px;
+
+    margin-bottom:28px;
+
+}
+
+.stat-card{
+
+    background:var(--color-surface);
+
+    border-radius:22px;
+
+    padding:22px;
+
+    text-align:center;
+
+    box-shadow:var(--shadow-small);
+
+    transition:var(--transition);
+
+}
+
+.stat-card:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:var(--shadow-medium);
+
+}
+
+.stat-card h2{
+
+    font-size:1rem;
+
+    color:var(--color-subtext);
+
+    margin-bottom:12px;
+
+}
+
+.stat-card p{
+
+    font-size:2rem;
+
+    font-weight:bold;
+
+    color:var(--color-primary);
+
+}
+
+/* ---------- Filters ---------- */
+
+.filters{
+
+    display:flex;
+
+    gap:16px;
+
+    margin-bottom:30px;
+
+    flex-wrap:wrap;
+
+}
+
+.filters select,
+.filters input{
+
+    flex:1;
+
+    min-width:220px;
+
+    padding:15px 18px;
+
+    border:none;
+
+    border-radius:16px;
+
+    background:white;
+
+    box-shadow:var(--shadow-small);
+
+    font-size:1rem;
+
+}
+
+.filters input:focus,
+.filters select:focus{
+
+    outline:2px solid var(--color-primary);
+
+}
+
+/* ---------- Card Grid ---------- */
+
+.card-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fill,minmax(240px,1fr));
+
+    gap:24px;
+
+}
+
+/* ---------- Card ---------- */
+
+.card{
+
+    background:white;
+
+    border-radius:24px;
+
+    overflow:hidden;
+
+    box-shadow:var(--shadow-small);
+
+    transition:.25s;
+
+    cursor:pointer;
+
+}
+
+.card:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:var(--shadow-medium);
+
+}
+
+/* ---------- Image ---------- */
+
+.card-image{
+
+    aspect-ratio:3/4;
+
+    background:#f2f2f2;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:3rem;
+
+}
+
+/* ---------- Body ---------- */
+
+.card-body{
+
+    padding:18px;
+
+}
+
+.card-title{
+
+    font-size:1rem;
+
+    font-weight:bold;
+
+    margin-bottom:8px;
+
+}
+
+.card-series{
+
+    color:var(--color-subtext);
+
+    font-size:.9rem;
+
+    margin-bottom:14px;
+
+}
+
+/* ---------- Status ---------- */
+
+.card-status{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+.badge{
+
+    background:var(--color-primary);
+
+    color:white;
+
+    padding:6px 14px;
+
+    border-radius:999px;
+
+    font-size:.8rem;
+
+}
+
+.favorite{
+
+    font-size:1.3rem;
+
+}
+
+/* ---------- Empty ---------- */
+
+.empty{
+
+    text-align:center;
+
+    padding:80px 20px;
+
+    color:var(--color-subtext);
+
+}
+
+/* ---------- ScrollBar ---------- */
+
+::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:var(--color-primary);
+
+    border-radius:999px;
+
+}
