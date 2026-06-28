@@ -8,6 +8,8 @@
 
     <meta name="theme-color" content="#ffffff">
 
+    <link rel="manifest" href="manifest.json">
+
     <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
@@ -17,59 +19,51 @@
 
 <div id="app">
 
-    <!-- Header -->
+    <!-- ================= HEADER ================= -->
+
     <header class="header">
 
         <div class="logo">
-
             <h1>🍓 FZ CardBook</h1>
-
             <p>FRUITS ZIPPER Trading Card Collection</p>
-
         </div>
 
     </header>
 
-    <!-- Dashboard -->
+    <!-- ================= DASHBOARD ================= -->
 
     <section class="dashboard">
 
         <div class="stat-card">
-
-            <h2>所持率</h2>
-
-            <p id="ownedRate">0%</p>
-
+            <span class="label">所持率</span>
+            <span id="ownedRate">0%</span>
         </div>
 
         <div class="stat-card">
-
-            <h2>所持枚数</h2>
-
-            <p id="ownedCount">0</p>
-
+            <span class="label">所持</span>
+            <span id="ownedCount">0</span>
         </div>
 
         <div class="stat-card">
+            <span class="label">未所持</span>
+            <span id="missingCount">0</span>
+        </div>
 
-            <h2>未所持</h2>
-
-            <p id="missingCount">0</p>
-
+        <div class="stat-card">
+            <span class="label">シリーズ</span>
+            <span id="seriesCount">0</span>
         </div>
 
     </section>
 
-    <!-- Filter -->
+    <!-- ================= FILTER ================= -->
 
     <section class="filters">
 
         <select id="memberSelect">
 
             <option value="all">全メンバー</option>
-
             <option value="karen">松本かれん</option>
-
             <option value="yui">櫻井優衣</option>
 
         </select>
@@ -77,21 +71,52 @@
         <select id="typeSelect">
 
             <option value="all">全種類</option>
-
             <option value="paper">紙トレカ</option>
-
             <option value="clear">クリアトレカ</option>
+
+        </select>
+
+        <select id="seriesSelect">
+
+            <option value="all">全シリーズ</option>
 
         </select>
 
         <input
             id="searchInput"
             type="search"
-            placeholder="シリーズ・カード名で検索">
+            placeholder="カード名・シリーズ検索">
 
     </section>
 
-    <!-- Card List -->
+    <!-- ================= SERIES INFO ================= -->
+
+    <section class="series-progress">
+
+        <div class="series-header">
+
+            <h2 id="seriesTitle">
+                全シリーズ
+            </h2>
+
+            <span id="seriesProgress">
+                0 / 0
+            </span>
+
+        </div>
+
+        <div class="progress-bar">
+
+            <div
+                id="progressFill"
+                class="progress-fill">
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= CARD LIST ================= -->
 
     <main>
 
@@ -105,12 +130,30 @@
 
 </div>
 
-<script src="js/config.js"></script>
-<script src="js/storage.js"></script>
-<script src="js/cards.js"></script>
-<script src="js/sheets.js"></script>
-<script src="js/ui.js"></script>
-<script src="js/app.js"></script>
+<!-- ================= MODAL ================= -->
 
-</body>
-</html>
+<div id="cardModal" class="modal hidden">
+
+    <div class="modal-content">
+
+        <button id="closeModal" class="close-btn">
+            ✕
+        </button>
+
+        <img
+            id="modalImage"
+            src=""
+            alt="">
+
+        <div class="modal-info">
+
+            <h2 id="modalTitle"></h2>
+
+            <p id="modalSeries"></p>
+
+            <p id="modalType"></p>
+
+            <p id="modalNumber"></p>
+
+            <button id="toggleBackImage">
+                裏面
