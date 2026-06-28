@@ -1,9 +1,19 @@
-document.addEventListener("DOMContentLoaded", async ()=>{
+document.addEventListener("DOMContentLoaded", async () => {
 
     console.log("FZ CardBook 起動");
 
-    const db = await loadDatabase();
+    try {
 
-    console.log(db);
+        const db = await loadDatabase();
+
+        console.log(db);
+
+        renderCards(db.master);
+
+    } catch (error) {
+
+        console.error(error);
+
+    }
 
 });
