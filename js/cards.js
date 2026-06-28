@@ -4,6 +4,8 @@
 
 function renderCards(cards){
 
+   console.log(cards);
+
     const container = document.getElementById("cardGrid");
 
     container.innerHTML = "";
